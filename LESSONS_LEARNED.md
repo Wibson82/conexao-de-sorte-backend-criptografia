@@ -21,6 +21,17 @@
 
 ---
 
+## 🔄 **HISTÓRICO DE MUDANÇAS**
+
+### **2025-08-27**
+- ✅ .dockerignore adicionado
+- ✅ Padrões de conectividade em Docker (host interno, evitar localhost no container)
+- ✅ Segredos via Key Vault + configtree (`/run/secrets`)
+- ✅ Separação R2DBC/Flyway quando necessário (r2dbc:// vs jdbc://)
+- ✅ Redis: desabilitar quando ausente; reativar após provisionamento
+
+---
+
 ## 🎯 **BOAS PRÁTICAS IDENTIFICADAS**
 
 ### ✅ **Versionamento Consistente:**

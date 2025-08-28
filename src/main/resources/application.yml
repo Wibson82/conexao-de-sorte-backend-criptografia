@@ -6,6 +6,9 @@
 # ===============================================================================
 
 spring:
+  jackson:
+    time-zone: America/Sao_Paulo
+    locale: pt_BR
   application:
     name: criptografia
     
