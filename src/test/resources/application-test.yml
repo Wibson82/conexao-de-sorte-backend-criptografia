@@ -1,0 +1,31 @@
+spring:
+  r2dbc:
+    url: r2dbc:h2:mem:///crypto_test;DB_CLOSE_DELAY=-1;MODE=MySQL
+    username: sa
+    password: ""
+    
+  flyway:
+    enabled: false  # Desabilitar Flyway em testes
+    
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8081/.well-known/jwks.json
+          
+server:
+  ssl:
+    enabled: false
+
+crypto:
+  master-key: test-key-for-development-only
+  hsm:
+    enabled: false
+    
+cors:
+  allowed-origins: http://localhost:3000  # Permitir HTTP em testes
+  
+logging:
+  level:
+    root: WARN
+    br.tec.facilitaservicos.criptografia: DEBUG

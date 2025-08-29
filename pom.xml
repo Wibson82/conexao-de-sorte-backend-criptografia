@@ -67,6 +67,16 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         
+        <!-- Spring Security OAuth2 para validação JWT -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-jose</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
@@ -210,11 +220,7 @@
         </dependency>
         
         <!-- === UTILITÁRIOS === -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
+        <!-- Lombok removido - usar construtores e getters/setters manuais -->
         
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -291,12 +297,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <!-- Excludes removidos - Lombok não está mais presente -->
                     <image>
                         <name>conexao-sorte/${project.artifactId}:${project.version}</name>
                         <env>
@@ -318,11 +319,7 @@
                         <arg>--enable-preview</arg>
                     </compilerArgs>
                     <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${lombok.version}</version>
-                        </path>
+                        <!-- Lombok removido -->
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
