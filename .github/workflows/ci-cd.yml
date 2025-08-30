@@ -36,14 +36,12 @@ jobs:
           java-version: '24'
           distribution: 'temurin'
           cache: maven
-      - name: Verify Maven wrapper
-        run: |
-          chmod +x ./mvnw
-          ./mvnw --version
+      - name: Verify Maven
+        run: mvn -v
       - name: Run unit tests (test profile)
-        run: ./mvnw clean test -Dspring.profiles.active=test
+        run: mvn -B clean test -Dspring.profiles.active=test
       - name: Build application (skip tests)
-        run: ./mvnw clean package -DskipTests
+        run: mvn -B clean package -DskipTests
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
